@@ -113,29 +113,31 @@ Same loop applied to:
 
 ---
 
-## Hardware: What Cable to Buy for Testing
+## Hardware: What to Buy for Testing
 
-**For OBD-II (car diagnostics):**
+### OBD-II Adapters (Car Diagnostics)
 
-Buy one of these to test with:
+All plug into your car's OBD-II port (driver's side, under the steering wheel — all US cars 1996+). All are ELM327-based, the universal OBD-II standard.
 
-| Product | Price | Buy At |
-|---------|-------|--------|
-| **Veepeak Mini Bluetooth OBD2 Scanner** | ~$20 | Amazon |
-| **BAFX Products Bluetooth OBD2 Adapter** | ~$22 | Amazon |
-| **OBDLink LX Bluetooth** | ~$30 | Amazon (more reliable, recommended) |
+| Product | Price | Phone | Amazon Link |
+|---------|-------|-------|-------------|
+| **Veepeak OBDCheck BLE** *(iOS + Android)* | ~$25 | iPhone & Android | [Buy on Amazon](https://www.amazon.com/dp/B073XKQQQW) |
+| **Veepeak Mini Bluetooth OBD2** *(Android only)* | ~$12 | Android only | [Buy on Amazon](https://www.amazon.com/dp/B011NSX27A) |
+| **OBDLink LX Bluetooth** *(Android only, most reliable)* | ~$30 | Android only | [Buy on Amazon](https://www.amazon.com/dp/B00H9S71LW) |
 
-All three are **ELM327-based** (the universal OBD-II protocol standard). They plug into the OBD-II port under your dashboard (driver's side, usually below the steering wheel — all US cars 1996+).
+**Recommendation by phone:**
+- **iPhone user?** → Buy the **Veepeak OBDCheck BLE** (~$25). The OBDLink LX does NOT support iOS.
+- **Android user?** → Buy the **OBDLink LX** (~$30). Most reliable, best app support.
 
-**To test on your computer/app:**
-- Android: Use "Torque" app to verify the adapter works
-- iOS: Use "OBD Fusion" app
-- Web: Chrome supports Web Bluetooth API — we can read the adapter directly in the browser
+**To verify your adapter works before building the app:**
+- Android: Download "Torque Lite" (free) from Google Play
+- iOS: Download "OBD Fusion" (~$10) from App Store
+- Both apps will read your car's live data and error codes immediately
 
-**For future appliance diagnostics:**
-- Multimeters with Bluetooth (Klein Tools MM700) for electrical
-- Thermal cameras (FLIR ONE for iPhone/Android, ~$150) for appliance heat diagnosis
-- These come in Phase 3–4
+### Future Diagnostics Hardware (Phase 3–4)
+- **Electrical:** Klein Tools MM700 Bluetooth Multimeter (~$80) — for appliance/electrical diagnosis
+- **Heat/HVAC:** FLIR ONE Thermal Camera for iPhone or Android (~$150–250) — see heat leaks, diagnose HVAC, refrigerator coils
+- No need to buy these yet — focus on OBD-II first
 
 ---
 

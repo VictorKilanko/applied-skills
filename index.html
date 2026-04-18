@@ -30,7 +30,7 @@
       </p>
       <form class="hero-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
         <input type="email" name="email" placeholder="Enter your email" required class="input" />
-        <button type="submit" class="btn btn-primary">Get Early Access</button>
+        <button type="submit" class="btn btn-primary">Join Waitlist</button>
       </form>
       <p class="hero-note">Free during beta. No credit card required.</p>
     </div>
@@ -160,16 +160,33 @@
       <h2 class="section-title">Be the first to fix it yourself.</h2>
       <p class="section-sub">Join the waitlist. Get early access before we launch publicly.</p>
       <form class="waitlist-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-        <input type="text" name="name" placeholder="Your name" required class="input" />
-        <input type="email" name="email" placeholder="Your email" required class="input" />
-        <select name="interest" class="input">
+        <input type="text" name="name" placeholder="Your first name" required class="input" />
+        <input type="email" name="email" placeholder="Your email address" required class="input" />
+        <input type="tel" name="phone" placeholder="Phone number (optional)" class="input" />
+        <select name="interest" required class="input">
           <option value="" disabled selected>What do you want to fix first?</option>
           <option value="car">My car</option>
-          <option value="appliances">Home appliances</option>
+          <option value="appliances">Home appliances (washer, dryer, fridge)</option>
           <option value="plumbing">Plumbing</option>
           <option value="electrical">Electrical</option>
-          <option value="hvac">HVAC</option>
+          <option value="hvac">HVAC / AC</option>
           <option value="all">All of the above</option>
+        </select>
+        <select name="car_owner" class="input">
+          <option value="" disabled selected>Do you own a car? (if fixing cars)</option>
+          <option value="yes_fix_myself">Yes — I already try to fix it myself</option>
+          <option value="yes_pay_mechanic">Yes — I always pay a mechanic</option>
+          <option value="yes_both">Yes — depends on the repair</option>
+          <option value="no">No car</option>
+        </select>
+        <input type="text" name="zip" placeholder="ZIP code (helps us plan launch areas)" class="input" />
+        <select name="heard_from" class="input">
+          <option value="" disabled selected>How did you hear about us?</option>
+          <option value="friend">Friend or family</option>
+          <option value="social">Social media</option>
+          <option value="search">Google / search</option>
+          <option value="youtube">YouTube</option>
+          <option value="other">Other</option>
         </select>
         <button type="submit" class="btn btn-primary btn-large">Get Early Access →</button>
       </form>
