@@ -28,9 +28,14 @@
       <p class="hero-sub">
         Point your phone camera at the problem. Applied Skills diagnoses it, tells you exactly what's wrong, and walks you through the fix — step by step.
       </p>
-      <form class="hero-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-        <input type="email" name="email" placeholder="Enter your email" required class="input" />
-        <button type="submit" class="btn btn-primary">Join Waitlist</button>
+      <div data-fs-success style="display:none" class="fs-success-hero">
+        <p>You're on the list! We'll be in touch.</p>
+      </div>
+      <div data-fs-error class="fs-error-msg"></div>
+      <form id="hero-form" class="hero-form" action="https://formspree.io/f/xgoryebz" method="POST">
+        <input type="email" name="email" placeholder="Enter your email" required class="input" data-fs-field />
+        <span data-fs-error="email" class="fs-field-error"></span>
+        <button type="submit" class="btn btn-primary" data-fs-submit-btn>Join Waitlist</button>
       </form>
       <p class="hero-note">Free during beta. No credit card required.</p>
     </div>
@@ -159,11 +164,22 @@
     <div class="container waitlist-inner">
       <h2 class="section-title">Be the first to fix it yourself.</h2>
       <p class="section-sub">Join the waitlist. Get early access before we launch publicly.</p>
-      <form class="waitlist-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-        <input type="text" name="name" placeholder="Your first name" required class="input" />
-        <input type="email" name="email" placeholder="Your email address" required class="input" />
-        <input type="tel" name="phone" placeholder="Phone number (optional)" class="input" />
-        <select name="interest" required class="input">
+      <div data-fs-success style="display:none" class="fs-success-waitlist">
+        <div class="fs-success-icon">✓</div>
+        <h3>You're on the list!</h3>
+        <p>We'll email you when early access opens. Thank you for joining Applied Skills.</p>
+      </div>
+      <div data-fs-error class="fs-error-msg"></div>
+      <form id="waitlist-form" class="waitlist-form" action="https://formspree.io/f/xgoryebz" method="POST">
+        <input type="text" name="name" placeholder="Your first name" required class="input" data-fs-field />
+        <span data-fs-error="name" class="fs-field-error"></span>
+
+        <input type="email" name="email" placeholder="Your email address" required class="input" data-fs-field />
+        <span data-fs-error="email" class="fs-field-error"></span>
+
+        <input type="tel" name="phone" placeholder="Phone number (optional)" class="input" data-fs-field />
+
+        <select name="interest" required class="input" data-fs-field>
           <option value="" disabled selected>What do you want to fix first?</option>
           <option value="car">My car</option>
           <option value="appliances">Home appliances (washer, dryer, fridge)</option>
@@ -172,15 +188,19 @@
           <option value="hvac">HVAC / AC</option>
           <option value="all">All of the above</option>
         </select>
-        <select name="car_owner" class="input">
+        <span data-fs-error="interest" class="fs-field-error"></span>
+
+        <select name="car_owner" class="input" data-fs-field>
           <option value="" disabled selected>Do you own a car? (if fixing cars)</option>
           <option value="yes_fix_myself">Yes — I already try to fix it myself</option>
           <option value="yes_pay_mechanic">Yes — I always pay a mechanic</option>
           <option value="yes_both">Yes — depends on the repair</option>
           <option value="no">No car</option>
         </select>
-        <input type="text" name="zip" placeholder="ZIP code (helps us plan launch areas)" class="input" />
-        <select name="heard_from" class="input">
+
+        <input type="text" name="zip" placeholder="ZIP code (helps us plan launch areas)" class="input" data-fs-field />
+
+        <select name="heard_from" class="input" data-fs-field>
           <option value="" disabled selected>How did you hear about us?</option>
           <option value="friend">Friend or family</option>
           <option value="social">Social media</option>
@@ -188,7 +208,8 @@
           <option value="youtube">YouTube</option>
           <option value="other">Other</option>
         </select>
-        <button type="submit" class="btn btn-primary btn-large">Get Early Access →</button>
+
+        <button type="submit" class="btn btn-primary btn-large" data-fs-submit-btn>Get Early Access →</button>
       </form>
     </div>
   </section>
@@ -203,5 +224,13 @@
   </footer>
 
   <script src="app.js"></script>
+
+  <!-- Formspree AJAX -->
+  <script>
+    window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+    formspree('initForm', { formElement: '#hero-form',     formId: 'xgoryebz' });
+    formspree('initForm', { formElement: '#waitlist-form', formId: 'xgoryebz' });
+  </script>
+  <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
 </html>

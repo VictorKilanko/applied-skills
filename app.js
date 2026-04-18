@@ -10,51 +10,6 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// Waitlist form submission feedback
-document.querySelectorAll('form').forEach(form => {
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const btn = form.querySelector('button[type="submit"]');
-    const originalText = btn.textContent;
-
-    // If using real Formspree, submit via fetch
-    const action = form.getAttribute('action');
-    if (action && !action.includes('YOUR_FORM_ID')) {
-      btn.textContent = 'Submitting...';
-      btn.disabled = true;
-      try {
-        const data = new FormData(form);
-        const res = await fetch(action, {
-          method: 'POST',
-          body: data,
-          headers: { Accept: 'application/json' }
-        });
-        if (res.ok) {
-          btn.textContent = 'You\'re on the list!';
-          btn.style.background = '#22c55e';
-          form.reset();
-        } else {
-          throw new Error('Failed');
-        }
-      } catch {
-        btn.textContent = 'Try again';
-        btn.disabled = false;
-      }
-    } else {
-      // Placeholder response (before Formspree is set up)
-      btn.textContent = 'You\'re on the list!';
-      btn.style.background = '#22c55e';
-      btn.style.cursor = 'default';
-      setTimeout(() => {
-        btn.textContent = originalText;
-        btn.style.background = '';
-        btn.style.cursor = '';
-        form.reset();
-      }, 3000);
-    }
-  });
-});
-
 // Intersection observer for subtle fade-in on sections
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {

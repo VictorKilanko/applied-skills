@@ -285,6 +285,56 @@ body {
 .why-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 10px; }
 .why-card p { font-size: 14px; color: var(--muted); line-height: 1.7; }
 
+/* ---- FORMSPREE STATES ---- */
+.fs-field-error {
+  display: block;
+  font-size: 12px;
+  color: #f87171;
+  margin-top: -8px;
+  text-align: left;
+}
+.fs-error-msg {
+  font-size: 13px;
+  color: #f87171;
+  margin-bottom: 12px;
+  text-align: center;
+}
+/* Field invalid state (set by Formspree via aria-invalid) */
+[aria-invalid="true"] { border-color: #f87171 !important; }
+
+/* Hero success */
+.fs-success-hero {
+  background: rgba(34,197,94,0.1);
+  border: 1px solid rgba(34,197,94,0.3);
+  border-radius: var(--radius);
+  padding: 16px 24px;
+  color: var(--green);
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 16px;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Waitlist success */
+.fs-success-waitlist {
+  background: rgba(34,197,94,0.08);
+  border: 1px solid rgba(34,197,94,0.25);
+  border-radius: var(--radius-lg);
+  padding: 40px 32px;
+  text-align: center;
+  max-width: 440px;
+  margin: 0 auto;
+}
+.fs-success-icon {
+  font-size: 36px;
+  color: var(--green);
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.fs-success-waitlist h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+.fs-success-waitlist p  { font-size: 14px; color: var(--muted); }
+
 /* ---- WAITLIST ---- */
 .waitlist-section {
   background: radial-gradient(ellipse at 50% 50%, rgba(79,142,247,0.07) 0%, transparent 70%);
