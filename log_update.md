@@ -47,8 +47,24 @@
   - iPhone → [Veepeak OBDCheck BLE (~$25)](https://www.amazon.com/dp/B073XKQQQW)
   - Android → [OBDLink LX (~$30)](https://www.amazon.com/dp/B00H9S71LW)
 
+### Phase 1b — React Native Mobile App (NEXT SESSION)
+**Decision:** Streamlit is web-only and cannot access Bluetooth or live camera on mobile. A React Native app is required for the full product vision (OBD-II, live video, App Store).
+
+**What to do before next session:**
+- [ ] Install Node.js from nodejs.org (LTS version)
+- [ ] Install Expo Go app on your phone (App Store / Google Play — search "Expo Go")
+
+**What we build next session:**
+- [ ] Create Expo project (`applied-skills-mobile` repo)
+- [ ] Chat screen: text input + photo picker + live camera button
+- [ ] Connect to Claude Haiku API via serverless backend
+- [ ] Test live on Victor's phone via Expo Go
+- [ ] Prep for App Store + Google Play submission
+
+**Tech:** React Native + Expo + Claude Haiku
+
 ### Phase 2 — OBD-II Integration
-- [ ] Connect OBD-II Bluetooth adapter to the app via Web Bluetooth API
+- [ ] Connect OBD-II Bluetooth adapter via `react-native-ble-plx` (Bluetooth library for React Native)
 - [ ] Read Diagnostic Trouble Codes (DTCs) directly from car ECU
 - [ ] Feed codes to Claude → combined camera + OBD diagnosis
 - [ ] Source branded Applied Skills OBD-II adapter to sell ($30–50 retail)
@@ -92,6 +108,23 @@
 | AI model | Claude Haiku (`claude-haiku-4-5-20251001`) |
 | Form handling | Formspree (ID: xgoryebz) |
 | API | Anthropic Claude API (pay-as-you-go, ~$0.014/diagnosis) |
+
+---
+
+---
+
+## Session 2 Preview — React Native App
+**Goal:** Build and test the Applied Skills mobile app on Victor's phone.
+
+**Pre-work Victor needs to do:**
+1. Install Node.js → nodejs.org (LTS version)
+2. Install Expo Go on phone → App Store or Google Play
+
+**We will build:**
+- React Native app with Expo
+- Chat + camera interface powered by Claude Haiku
+- Live test on Victor's phone via Expo Go
+- Submit to App Store + Google Play
 
 ---
 

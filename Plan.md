@@ -79,25 +79,52 @@ Same loop applied to:
 - [ ] Register domain (appliedskills.ai or appliedskills.com)
 - [ ] Set up email list (Mailchimp / ConvertKit)
 
-### Phase 1 — Camera MVP
-- [ ] Build web app (React + Claude API)
-- [ ] Camera/photo upload interface
-- [ ] AI chat that diagnoses from image + text description
-- [ ] Step-by-step repair response format
-- [ ] Deploy on Vercel or Railway
+### Phase 1 — Streamlit Web MVP ✅ COMPLETE
+- [x] Built Python + Streamlit app with Claude Haiku
+- [x] Photo upload + text description → AI diagnosis
+- [x] Deployed at https://applied-skills.streamlit.app/
+- [x] GitHub repo: https://github.com/VictorKilanko/applied-skills-app
+
+**Why we move on:** Streamlit is a browser-only web app. It cannot access Bluetooth (blocks OBD-II) or live camera streaming on mobile. A React Native app is required for the full product vision.
+
+---
+
+### Phase 1b — React Native App (NEXT SESSION)
+Build a true iOS + Android mobile app using **React Native + Expo** — same AI core, proper mobile experience.
+
+**Why React Native + Expo:**
+- Single codebase runs on both iPhone and Android
+- Full Bluetooth access → required for OBD-II adapter (Phase 2)
+- Live camera streaming (real-time video diagnosis, not just photo upload)
+- Submittable to App Store and Google Play
+- Expo makes setup and deployment much simpler than bare React Native
+
+**What to install before next session:**
+1. Node.js → download from nodejs.org (LTS version)
+2. Expo Go app → install on your phone from the App Store / Google Play
+   - This lets you run the app on your real phone instantly during development, no App Store submission needed
+
+**What we build in Session 2:**
+- [ ] Install Node.js + create Expo project
+- [ ] Build chat screen: text input + photo picker + camera button
+- [ ] Connect to Claude Haiku API (same key, same model)
+- [ ] Display diagnosis in a clean card-based mobile UI
+- [ ] Test live on Victor's phone via Expo Go
+- [ ] Submit to App Store / Google Play (TestFlight for iOS beta)
 
 **Tech stack:**
-- Frontend: React + Tailwind CSS
-- Backend: Python FastAPI
-- AI: Claude claude-sonnet-4-6 API (vision + conversation)
-- Hosting: Vercel (frontend) + Railway (backend)
+- Framework: React Native + Expo (free)
+- AI: Claude Haiku (`claude-haiku-4-5-20251001`) via Anthropic API
+- Backend: Expo API routes (serverless, keeps API key off device)
+- Hosting: Expo Application Services (EAS) — free tier available
+- App stores: Apple App Store + Google Play
 
 ### Phase 2 — OBD-II Integration
-- [ ] Source ELM327 Bluetooth OBD-II adapter (see Hardware section)
-- [ ] Integrate OBD-II reading into app (Web Bluetooth API)
+- [ ] Buy OBD-II Bluetooth adapter (see Hardware section)
+- [ ] Connect to adapter via React Native Bluetooth library (`react-native-ble-plx`)
 - [ ] Read Diagnostic Trouble Codes (DTCs) from car ECU
-- [ ] Feed to AI → combine with camera diagnosis
-- [ ] Brand and sell adapter on website ($30–50)
+- [ ] Feed codes to Claude Haiku → combined camera + OBD diagnosis
+- [ ] Brand and sell Applied Skills OBD-II adapter ($30–50 retail)
 
 ### Phase 3 — Parts Marketplace
 - [ ] Amazon Associates affiliate integration
@@ -151,16 +178,20 @@ Applied Skills Platform
 │   ├── GitHub Pages (free hosting)
 │   └── Formspree (email capture)
 │
-├── Web App MVP (Phase 1)
-│   ├── React (frontend)
-│   ├── Python FastAPI (backend)
-│   ├── Claude API — claude-sonnet-4-6 (vision + chat)
-│   └── Vercel + Railway (hosting)
+├── Web App MVP (Phase 1) ✅ LIVE
+│   ├── Python + Streamlit
+│   ├── Claude Haiku (vision + chat)
+│   └── Streamlit Community Cloud (free)
+│
+├── Mobile App (Phase 1b) ← NEXT SESSION
+│   ├── React Native + Expo
+│   ├── Claude Haiku API (serverless backend)
+│   └── App Store + Google Play
 │
 ├── OBD-II Integration (Phase 2)
 │   ├── ELM327 Bluetooth adapter (hardware)
-│   ├── Web Bluetooth API (browser ↔ adapter)
-│   └── OBD-II DTC parser (Python library: python-OBD)
+│   ├── react-native-ble-plx (Bluetooth library)
+│   └── OBD-II DTC parser
 │
 └── Parts Affiliate (Phase 3)
     ├── Amazon Associates API
@@ -172,11 +203,21 @@ Applied Skills Platform
 
 ## Next Steps (In Order)
 
-1. **Today:** Set up Formspree account → replace `YOUR_FORM_ID` in index.html
-2. **This week:** Test the landing page live at `victorkilanko.github.io/applied-skills`
-3. **Next:** Buy OBD-II adapter (Veepeak or OBDLink LX) to begin hardware testing
-4. **Next:** Start Phase 1 web app (React + Claude API camera diagnosis)
-5. **Later:** Register domain → appliedskills.ai or appliedskills.com
+### Before Next Session
+1. **Rotate API key** — console.anthropic.com → delete old key → create new → update in Streamlit secrets
+2. **Test the live app** — https://applied-skills.streamlit.app/ — run a real car problem through it
+3. **Install Node.js** — nodejs.org → download LTS version → install (required for React Native)
+4. **Install Expo Go on your phone** — App Store (iPhone) or Google Play (Android) — search "Expo Go"
+5. **Buy OBD-II adapter** — see Hardware section for links
+
+### Next Session (Session 2)
+6. Build the React Native mobile app with Expo
+7. Test live on your phone via Expo Go
+8. Submit to App Store / Google Play
+
+### Later
+9. Register domain → appliedskills.ai or appliedskills.com
+10. Set up email list (Mailchimp / ConvertKit) for waitlist subscribers
 
 ---
 
@@ -190,4 +231,4 @@ Applied Skills Platform
 
 ---
 
-*Last updated: April 2025*
+*Last updated: April 18, 2026*
