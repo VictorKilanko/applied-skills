@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Dark background -->
+  <rect width="64" height="64" rx="14" fill="#0a0a0f"/>
+  <!-- Blue accent background -->
+  <rect x="4" y="4" width="56" height="56" rx="10" fill="#4f8ef7"/>
+  <!-- Letter A — left stroke -->
+  <polygon points="29,12 35,12 50,52 42,52" fill="white"/>
+  <!-- Letter A — right stroke -->
+  <polygon points="29,12 35,12 22,52 14,52" fill="white"/>
+  <!-- Letter A — crossbar -->
+  <rect x="20" y="36" width="24" height="7" fill="white"/>
+</svg>
